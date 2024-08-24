@@ -32,6 +32,7 @@ public class BancoControlador {
         cantidadPersonas();
         listarPersonasBajoPromediio();
         listarPersonas();
+        cancelar();
     }
 
     public void calcularSaldoPromedio() {
@@ -56,6 +57,14 @@ public class BancoControlador {
 
     public void listarPersonas() {
         frame.setTaListaClientes(banco.listarPersonas());
+    }
+
+    public void cancelar() {
+
+        frame.setTxtNombre("");
+        frame.setTxtCorreo("");
+        frame.setTxtSaldo("");
+
     }
 
 }

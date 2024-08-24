@@ -17,7 +17,7 @@ public class Banco {
         int saldo = Integer.parseInt(sald);
 
         Cliente c1 = new Cliente(nombre, correo, saldo);
-        for (int i = 0; i < clientes.length - 1; i++) {
+        for (int i = 0; i < clientes.length; i++) {
             if (clientes[i] == null) {
                 clientes[i] = c1;
                 break;
@@ -30,7 +30,7 @@ public class Banco {
         double sumatoria = 0;
         int clienteSumado = 0;
 
-        for (int i = 0; i < clientes.length - 1; i++) {
+        for (int i = 0; i < clientes.length; i++) {
             if (clientes[i] != null) {
                 clienteSumado++;
                 sumatoria += clientes[i].getSaldo();
@@ -42,7 +42,7 @@ public class Banco {
     public int cantidadPerosnas() {
 
         int clienteSumado = 0;
-        for (int i = 0; i < clientes.length - 1; i++) {
+        for (int i = 0; i < clientes.length; i++) {
             if (clientes[i] != null) {
                 clienteSumado++;
             }
@@ -55,7 +55,7 @@ public class Banco {
         int personasMenosPromedio = 0;
         double promedio = promedioSaldo();
 
-        for (int i = 0; i < clientes.length - 1; i++) {
+        for (int i = 0; i < clientes.length; i++) {
             if (clientes[i] != null) {
                 if (clientes[i].getSaldo() < promedio) {
                     personasMenosPromedio++;
@@ -69,7 +69,7 @@ public class Banco {
 
         String string = "";
 
-        for (int i = 0; i < clientes.length - 1; i++) {
+        for (int i = 0; i < clientes.length; i++) {
             if (clientes[i] != null) {
                 string += clientes[i].getNombre() + " - " + clientes[i].getCorreo() + "\n";
             }
