@@ -4,17 +4,64 @@
  */
 package u1.ejercicio9banco.vista;
 
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import u1.ejercicio9banco.controlador.BancoControlador;
+
 /**
  *
  * @author borisperezg
  */
 public class BancoVista extends javax.swing.JFrame {
+    
+    private BancoControlador controlador;
 
     /**
      * Creates new form BancoVista
      */
     public BancoVista() {
         initComponents();
+        controlador = new BancoControlador(this);
+    }
+    
+    public JTextField getTxtCorreo() {
+        return txtCorreo;
+    }
+    
+    public JTextField getTxtNombre() {
+        return txtNombre;
+    }
+    
+    public JTextField getTxtSaldo() {
+        return txtSaldo;
+    }
+    
+    public void setTxtCantidadClientes(String txtCantidadClientes) {
+        this.txtCantidadClientes.setText(txtCantidadClientes);
+    }
+    
+    public void setTxtCantidadClientes1(String txtCantidadClientes1) {
+        this.txtCantidadClientes1.setText(txtCantidadClientes1);
+    }
+    
+    public void setTxtPromedio(String txtPromedio) {
+        this.txtPromedio.setText(txtPromedio);
+    }
+    
+    public void setTaListaClientes(String taListaClientes) {
+        this.taListaClientes.setText(taListaClientes);
+    }
+    
+    public void setTxtCorreo(String txtCorreo) {
+        this.txtCorreo.setText(txtCorreo);
+    }
+    
+    public void setTxtNombre(String txtNombre) {
+        this.txtNombre.setText(txtNombre);
+    }
+    
+    public void setTxtSaldo(String txtSaldo) {
+        this.txtSaldo.setText(txtSaldo);
     }
 
     /**
@@ -56,8 +103,18 @@ public class BancoVista extends javax.swing.JFrame {
         jLabel3.setText("Saldo:");
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -176,6 +233,14 @@ public class BancoVista extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        controlador.crearCliente();
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        controlador.cancelar();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
